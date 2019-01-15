@@ -55,7 +55,7 @@
 					<tr>
 						<td>
 							<p class="labels">Monthly Investment(Rs.)</p> <input type="text"
-							id="installment" name="installment" placeholder="Deposit Amount" onchange="toINR('installment')"
+							id="installment" name="installment" placeholder="Deposit Amount" onmousewheel="changeAmount('installment',500);toINR('installment')" onkeyup="toINR('installment')"
 							required pattern="[0-9,]+" />
 						</td>
 					</tr>

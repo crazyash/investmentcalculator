@@ -56,11 +56,35 @@ function calculateSIP(){
 	document.getElementById('sipresult').innerHTML="<table><tr><td>Maturity Amount</td><td>: Rs. "+ amount.toLocaleString('en-IN')+"</td></tr><tr><td>Total Interest Earned</td><td>: Rs. "+ interest.toLocaleString('en-IN')+"</td></tr></table>";
 }
 
+function changeAmount(money,val){
+	var x= document.getElementById(money);
+	console.log(x.value);
+	var amount=parseInt(x.value.replace(/,/g, ""));
+	console.log(amount);
+	console.log(wDelta);
 
+	if(!Number.isNaN(amount)&&(amount>=0)&&(wDelta > 0))
+		 x.value=amount+val;
+	if(!Number.isNaN(amount)&&(amount>=500)&&(wDelta < 0))
+		 x.value=amount-val;
+	if(Number.isNaN(amount)&&(wDelta > 0)) x.value=0;
+	wDelta=0;
+	/*kDelta=0;*/
+}
+
+window.addEventListener('mousewheel', function(e){
+    wDelta = e.wheelDelta;
+    console.log(wDelta);
+});
+
+/*window.addEventListener('keydown', function(event){
+    kDelta = event.keyCode;
+    console.log(kDelta);
+});*/
 
 function toINR(money){
 	var x= document.getElementById(money);
-	var amount=parseInt(x.value);
+	var amount=parseInt(x.value.replace(/,/g, ""));
 	if(!Number.isNaN(amount))
 	 x.value=amount.toLocaleString('en-IN');
 }
