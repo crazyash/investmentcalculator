@@ -38,15 +38,15 @@
 <div id="main" class="graybackground" >
 	<div id="left" class="layout"></div>
 	<div id="center" class="layout">
-		<form onsubmit="caclulateFD(); return false;" method="post" autocomplete="off">
+		<form onsubmit="calculateFD(); return false;" method="post" autocomplete="off">
 		
 		<table align="center">
 		<tr><td>
 			<p class="labels">FD Amount (Rs.)</p>
-			<input type="text" 		id="principleamount" 	name="principleamount"	value="" placeholder="Principle Amount"  onchange="toINR('principleamount')"	required 	pattern="[0-9]+"/>
+			<input type="text" 		id="principleamount" 	name="principleamount"	value="" placeholder="Principle Amount"  onchange="toINR('principleamount')"	required 	pattern="[0-9,]+"/>
 		</td></tr>
 		<tr><td>	
-			<p class="labels">Interest (%) &emsp;&emsp;&emsp;&emsp; &nbsp;Frequency</p> 
+			<p class="labels">Interest (%) &emsp;&emsp;&emsp;&emsp;&emsp;Frequency</p> 
 			<input type="text" 		id="interestrate" 		name="interestrate" 	value="" placeholder="Interest" 		required 	pattern="[0-9.]+"/>
 			<select id="frequency"	name="frequency">
 				<option value="1">Yearly</option>
