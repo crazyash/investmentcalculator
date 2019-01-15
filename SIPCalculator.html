@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIP Calculator</title>
+<link rel="stylesheet" href="Styles.css">
+<script type="text/javascript" src="Script.js"></script>
+
+<style>
+#interestrate{
+	width: 90px;
+}
+#durationYtext, #durationMtext{
+	width: 75px;
+}
+
+#durationY{
+	width: 90px;
+}
+
+#durationM{
+	width: 60px;
+}
+</style>
+</head>
+<body>
+
+	<!-- Header #Start-->
+	<div id="header">
+		<!-- Site Logo & Text #Start-->
+		<div id="logo" class="logo"></div>
+		<!-- Site Logo & Text #End-->
+		<!-- Navigation Bar #Start-->
+		<div id="topnav" class="topnav">
+			<a href="Home.html">Home</a>
+			<a href="FDCalculator.html">FD Calculator</a>
+			<a href="RDCalculator.html">RD Calculator</a>
+			<a class="active" href="SIPCalculator.html">SIP Calculator</a>
+			<a href="SWPCalculator.html">SWP Calculator</a>
+			<!-- <a href="Register.html" style="float: right;">Sign Up</a>
+		  <a href="Login.html" style="float: right;">Sign In</a> -->
+		</div>
+		<!-- Navigation Bar #End-->
+	</div>
+	<!-- Header #End-->
+
+	<div id="main" class="graybackground">
+		<div id="left" class="layout"></div>
+		<div id="center" class="layout">
+			<form onsubmit="calculateSIP(); return false;" method="post"
+				autocomplete="off">
+
+				<table align="center">
+					<tr>
+						<td>
+							<p class="labels">Monthly Investment(Rs.)</p> <input type="text"
+							id="installment" name="installment" placeholder="Deposit Amount" onchange="toINR('installment')"
+							required pattern="[0-9,]+" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p class="labels">Duration</p> <input type="text" id="durationY"
+							name="durationY" placeholder="Duration" required pattern="[0-9]+" />
+							<input id="durationYtext" type="text" disabled="disabled" placeholder="Year(s)" /> <select
+							id="durationM" name="durationM">
+								<option value="0" selected="selected">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+								<option value="11">11</option>
+								<option value="12">12</option>
+						</select> <input id="durationMtext" type="text" disabled="disabled" placeholder="Month(s)" />
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<p class="labels">Expected Annual Returns(%)</p> <input type="text"
+							id="interestrate" name="interestrate" value=""
+							placeholder="Interest" required pattern="[0-9.]+" />
+						</td>
+					</tr>
+
+					<tr>
+						<td><input type="submit" id="calculate" name="calculate"
+							value="Calculate" /> <input type="reset" id="clear" name="clear"
+							value="Clear" onclick="clearForm('sipresult');" /></td>
+					</tr>
+
+					<tr>
+						<td>
+							<p class="results" id="sipresult" hidden="hidden"></p>
+						</td>
+					</tr>
+
+				</table>
+			</form>
+		</div>
+		<div id="right" class="layout"></div>
+	</div>
+
+</body>
+</html>
