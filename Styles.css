@@ -1,0 +1,118 @@
+/* Navigation Bar #Start*/
+body {
+	background-color: #f2f2f2;
+}
+
+.topnav {
+	overflow: hidden;
+	background-color: #333;
+}
+
+.topnav a {
+	float: left;
+	display: block;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 16px;
+	font-family: "Segoe UI","Helvetica Neue","Lucida Grande","Roboto","Ebrima","Nirmala UI","Gadugi","Segoe Xbox Symbol","Segoe UI Symbol","Meiryo UI","Khmer UI","Tunga","Lao UI","Raavi","Iskoola Pota","Latha","Leelawadee","Microsoft YaHei UI","Microsoft JhengHei UI","Malgun Gothic","Estrangelo Edessa","Microsoft Himalaya","Microsoft New Tai Lue","Microsoft PhagsPa","Microsoft Tai Le","Microsoft Yi Baiti","Mongolian Baiti","MV Boli","Myanmar Text","Cambria Math";
+    font-weight: bold;
+	text-decoration: none;
+	font-size: 15px;
+}
+
+.topnav a:hover {
+	background-color: #ddd;
+	color: black;
+}
+
+.topnav a.active {
+	background-color: #4CAF50;
+	color: white;
+}
+
+/* Navigation Bar #End*/
+
+/* Forms #Start*/
+.graybackground input[type=text], [type=email], [type=password] {
+	width: 320px;
+	padding: 8px 8px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+
+.graybackground input[type=email], #username {
+	text-transform: lowercase;
+}
+
+.graybackground input[type=submit], [type=reset] {
+	width: 160px;
+	background-color: #4CAF50;
+	color: white;
+	font-weight: bold;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.graybackground input[type=submit]:hover {
+	background-color: #45a049;
+}
+
+/* .graybackground{
+	width: 100%;
+} */
+
+.layout #left #right{
+  float: left;
+  width: 25%;
+  height: 1000px;
+}
+
+.layout #center{
+  float: left;
+  width: 50%;
+  height: 1000px;
+}
+
+select {
+  width: 155px;
+  padding: 8px 5px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.labels {
+	font-weight: bold;
+	margin: 5px 0 0 0;
+	font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 15px;
+	line-height: 1.42857143;
+	color: #2c3e50;
+}
+
+.graybackground {
+	/* width: 50%;
+	margin: 0 25% 0 25%;
+	Top Right Bottom Left */
+	border-radius: 5px;
+	background-color: #f2f2f2;
+	padding: 20px;
+}
+
+.results {
+	font-weight: bold;
+	margin: 5px 0 0 0;
+	font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.42857143;
+	color: #2c3e50;
+}
