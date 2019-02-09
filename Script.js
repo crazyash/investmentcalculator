@@ -1,3 +1,5 @@
+wDelta=0;
+kDelta='';
 /*FD Calculation*/
 function calculateFD(){
 	var P=document.getElementById('principleamount').value.replace(/,/g, "");
@@ -69,18 +71,27 @@ function changeAmount(money,val){
 		 x.value=amount-val;
 	if(Number.isNaN(amount)&&(wDelta > 0)) x.value=0;
 	wDelta=0;
-	/*kDelta=0;*/
+	
+	console.log(kDelta);
+	if(!Number.isNaN(amount)&&(amount>=0)&&(kDelta == 'ArrowUp'))
+		 x.value=amount+val;
+	if(!Number.isNaN(amount)&&(amount>=500)&&(kDelta == 'ArrowDown'))
+		 x.value=amount-val;
+	if(Number.isNaN(amount)&&(kDelta == 'ArrowUp')) x.value=0;
+	kDelta='';
+
+	toINR(money);
 }
+
 
 window.addEventListener('mousewheel', function(e){
     wDelta = e.wheelDelta;
     console.log(wDelta);
 });
 
-/*window.addEventListener('keydown', function(event){
-    kDelta = event.keyCode;
-    console.log(kDelta);
-});*/
+window.addEventListener('keyup', function(e){
+	kDelta=e.key;
+});
 
 function toINR(money){
 	var x= document.getElementById(money);
