@@ -58,13 +58,29 @@ function calculateSIP(){
 	document.getElementById('sipresult').innerHTML="<table><tr><td>Maturity Amount</td><td>: Rs. "+ amount.toLocaleString('en-IN')+"</td></tr><tr><td>Total Interest Earned</td><td>: Rs. "+ interest.toLocaleString('en-IN')+"</td></tr></table>";
 }
 
+/*EMI Calculation*/
+function calculateEMI(){
+	var P=document.getElementById('loanAmount').value.replace(/,/g, "");
+	var r=document.getElementById('interestrate').value/(12*100);
+	var t=(document.getElementById('durationY').value*12)+parseInt(document.getElementById('durationM').value);
+	console.log(P+' '+r+' '+t);
+	var amount=0,total=0;
+	amount= (P*r*Math.pow(1+r,t))/(Math.pow(1+r,t)-1);
+	amount=Math.ceil(amount);
+	total=amount*t;
+	
+	document.getElementById('emiresult').hidden=false;
+	document.getElementById('emiresult').innerHTML="<table><tr><td>EMI</td><td>: Rs. "+ amount.toLocaleString('en-IN')
+	+"</td></tr><tr><td>Total Payment</td><td>: Rs. "+ total.toLocaleString('en-IN')+"</td></tr></table>";
+	
+}
+
+
 function changeAmount(money,val){
 	var x= document.getElementById(money);
 	console.log(x.value);
 	var amount=parseInt(x.value.replace(/,/g, ""));
-	console.log(amount);
-	console.log(wDelta);
-
+	
 	if(!Number.isNaN(amount)&&(amount>=0)&&(wDelta > 0))
 		 x.value=amount+val;
 	if(!Number.isNaN(amount)&&(amount>=500)&&(wDelta < 0))
@@ -83,6 +99,20 @@ function changeAmount(money,val){
 	toINR(money);
 }
 
+function roundoff(money){
+	var x= document.getElementById(money);
+	var amount=parseInt(x.value.replace(/,/g, ""));
+	var rem = amount%500;
+	var div = parseInt(amount/500);
+	console.log(rem);
+	console.log(div);
+	if(rem >=250)
+		x.value=500*(div+1);
+	else
+		x.value=500*div;
+	
+	toINR(money);
+}
 
 window.addEventListener('mousewheel', function(e){
     wDelta = e.wheelDelta;

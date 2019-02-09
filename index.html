@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="ISO-8859-1">
-	<title>Home</title>
-	<link rel="stylesheet" href="Styles.css">
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FD Calculator</title>
+<link rel="stylesheet" href="Styles.css">
+<script type="text/javascript" src="Script.js"></script>
+
+<style>
+#interestrate, #tenure {
+	width: 160px;
+}
+</style>
 </head>
 <body>
 
@@ -15,19 +23,60 @@
 	<!-- Site Logo & Text #End-->
 	<!-- Navigation Bar #Start-->
 		<div id="topnav" class="topnav">
-		  <a class="active" href="Home.html">Home</a>
-		  <a href="FDCalculator.html">FD Calculator</a>
+		  <!-- <a href="Home.html">Home</a> -->
+		  <a class="active" href="FDCalculator.html">FD Calculator</a>
 		  <a href="RDCalculator.html">RD Calculator</a>
 		  <a href="SIPCalculator.html">SIP Calculator</a>
-		  <a href="SWPCalculator.html">SWP Calculator</a>
-		  <a href="Register.html" style="float: right;">Sign Up</a>
-		  <a href="Login.html" style="float: right;">Sign In</a>
+		  <a href="EMICalculator.html">EMI Calculator</a>
+		  <!-- <a href="Register.html" style="float: right;">Sign Up</a>
+		  <a href="Login.html" style="float: right;">Sign In</a> -->
 		</div>
 	<!-- Navigation Bar #End-->
 	</div>
 <!-- Header #End-->
 
-
+<div id="main" class="graybackground" >
+	<div id="left" class="layout"></div>
+	<div id="center" class="layout">
+		<form onsubmit="calculateFD(); return false;" method="post" autocomplete="off">
+		
+		<table align="center">
+		<tr><td>
+			<p class="labels">FD Amount (Rs.)</p>
+			<input type="text" 		id="principleamount" 	name="principleamount"	value="" placeholder="Principle Amount"  onkeyup="toINR('principleamount')"	required 	pattern="[0-9,]+"/>
+		</td></tr>
+		<tr><td>	
+			<p class="labels">Interest (%) &emsp;&emsp;&emsp;&emsp;&emsp;Frequency</p> 
+			<input type="text" 		id="interestrate" 		name="interestrate" 	value="" placeholder="Interest" 		required 	pattern="[0-9]*[. ]*[0-9]+"/>
+			<select id="frequency"	name="frequency">
+				<option value="1">Yearly</option>
+				<option value="2">Half Yearly</option>
+				<option value="4">Quarterly</option>
+				<option value="12">Monthly</option>
+			</select>  
+		</td></tr>	
+		<tr><td>
+			<p class="labels">Investment Period</p>
+			<input type="text" 		id="tenure" 			name="tenure" 			value="" placeholder="Tenure" 			required 	pattern="[0-9]+"/>
+			<select id="tenureType"	name="tenureType">
+				<option value="y">Year(s)</option>
+				<option value="m">Month(s)</option>
+			</select>
+		</td></tr>
+		<tr><td>
+			<input type="submit" id="calculate" 	name="calculate" value="Calculate"/>
+			<input type="reset"  id="clear" 		name="clear" 	 value="Clear"     onclick="clearForm('result');"/>
+		</td></tr>
+		<tr><td>
+			<p class="results" id="result" name="result" hidden="hidden"></p>
+		</td></tr>
+			</table>
+		</form>
+		</div>
+	<div id="right" class="layout">
+	
+	</div>
+</div>
 
 </body>
 </html>

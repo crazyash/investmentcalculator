@@ -3,7 +3,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SIP Calculator</title>
+<title>EMI Calculator</title>
 <link rel="stylesheet" href="Styles.css">
 <script type="text/javascript" src="Script.js"></script>
 
@@ -36,8 +36,8 @@
 			<!-- <a href="Home.html">Home</a> -->
 			<a href="FDCalculator.html">FD Calculator</a>
 			<a href="RDCalculator.html">RD Calculator</a>
-			<a class="active" href="SIPCalculator.html">SIP Calculator</a>
-			<a href="EMICalculator.html">EMI Calculator</a>
+			<a href="SIPCalculator.html">SIP Calculator</a>
+			<a class="active" href="EMICalculator.html">EMI Calculator</a>
 			<!-- <a href="Register.html" style="float: right;">Sign Up</a>
 		  <a href="Login.html" style="float: right;">Sign In</a> -->
 		</div>
@@ -48,20 +48,27 @@
 	<div id="main" class="graybackground">
 		<div id="left" class="layout"></div>
 		<div id="center" class="layout">
-			<form onsubmit="calculateSIP(); return false;" method="post"
+			<form onsubmit="calculateEMI(); return false;" method="post"
 				autocomplete="off">
 
 				<table align="center">
 					<tr>
 						<td>
-							<p class="labels">Monthly Investment(Rs.)</p> <input type="text"
-							id="installment" name="installment" placeholder="Deposit Amount" onmousewheel="changeAmount('installment',500);" onkeyup="changeAmount('installment',500);" onchange="roundoff('installment');"
-							required pattern="[0-9,]+" value="500"/>
+							<p class="labels">Loan Amount(Rs.)</p>
+							<input type="text" id="loanAmount" name="loanAmount" placeholder="Loan Amount" onkeyup="toINR('loanAmount')"
+							required pattern="[0-9,]+"/>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<p class="labels">Duration</p> <input type="text" id="durationY"
+							<p class="labels">Interest Rate(%)</p> <input type="text"
+							id="interestrate" name="interestrate" value=""
+							placeholder="Interest" required pattern="[0-9]*[. ]*[0-9]+" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p class="labels">Loan Tenure</p> <input type="text" id="durationY"
 							name="durationY" placeholder="Duration" required pattern="[0-9]+" />
 							<input id="durationYtext" type="text" disabled="disabled" placeholder="Year(s)" /> <select
 							id="durationM" name="durationM">
@@ -83,22 +90,14 @@
 					</tr>
 
 					<tr>
-						<td>
-							<p class="labels">Expected Annual Returns(%)</p> <input type="text"
-							id="interestrate" name="interestrate" value=""
-							placeholder="Interest" required pattern="[0-9]*[. ]*[0-9]+" />
-						</td>
-					</tr>
-
-					<tr>
 						<td><input type="submit" id="calculate" name="calculate"
 							value="Calculate" /> <input type="reset" id="clear" name="clear"
-							value="Clear" onclick="clearForm('sipresult');" /></td>
+							value="Clear" onclick="clearForm('emiresult');" /></td>
 					</tr>
 
 					<tr>
 						<td>
-							<p class="results" id="sipresult" hidden="hidden"></p>
+							<p class="results" id="emiresult" hidden="hidden"></p>
 						</td>
 					</tr>
 

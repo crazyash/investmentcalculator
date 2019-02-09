@@ -23,11 +23,11 @@
 	<!-- Site Logo & Text #End-->
 	<!-- Navigation Bar #Start-->
 		<div id="topnav" class="topnav">
-		  <a href="Home.html">Home</a>
+		  <!-- <a href="Home.html">Home</a> -->
 		  <a class="active" href="FDCalculator.html">FD Calculator</a>
 		  <a href="RDCalculator.html">RD Calculator</a>
 		  <a href="SIPCalculator.html">SIP Calculator</a>
-		  <a href="SWPCalculator.html">SWP Calculator</a>
+		  <a href="EMICalculator.html">EMI Calculator</a>
 		  <!-- <a href="Register.html" style="float: right;">Sign Up</a>
 		  <a href="Login.html" style="float: right;">Sign In</a> -->
 		</div>
@@ -43,11 +43,11 @@
 		<table align="center">
 		<tr><td>
 			<p class="labels">FD Amount (Rs.)</p>
-			<input type="text" 		id="principleamount" 	name="principleamount"	value="" placeholder="Principle Amount"  onchange="toINR('principleamount')"	required 	pattern="[0-9,]+"/>
+			<input type="text" 		id="principleamount" 	name="principleamount"	value="" placeholder="Principle Amount"  onkeyup="toINR('principleamount')"	required 	pattern="[0-9,]+"/>
 		</td></tr>
 		<tr><td>	
 			<p class="labels">Interest (%) &emsp;&emsp;&emsp;&emsp;&emsp;Frequency</p> 
-			<input type="text" 		id="interestrate" 		name="interestrate" 	value="" placeholder="Interest" 		required 	pattern="[0-9.]+"/>
+			<input type="text" 		id="interestrate" 		name="interestrate" 	value="" placeholder="Interest" 		required 	pattern="[0-9]*[. ]*[0-9]+"/>
 			<select id="frequency"	name="frequency">
 				<option value="1">Yearly</option>
 				<option value="2">Half Yearly</option>
@@ -65,7 +65,7 @@
 		</td></tr>
 		<tr><td>
 			<input type="submit" id="calculate" 	name="calculate" value="Calculate"/>
-			<input type="reset"  id="clear" 		name="clear" 	 value="Clear"     onclick="clearForm();"/>
+			<input type="reset"  id="clear" 		name="clear" 	 value="Clear"     onclick="clearForm('result');"/>
 		</td></tr>
 		<tr><td>
 			<p class="results" id="result" name="result" hidden="hidden"></p>
