@@ -63,15 +63,24 @@ function calculateEMI(){
 	var P=document.getElementById('loanAmount').value.replace(/,/g, "");
 	var r=document.getElementById('interestrate').value/(12*100);
 	var t=(document.getElementById('durationY').value*12)+parseInt(document.getElementById('durationM').value);
-	console.log(P+' '+r+' '+t);
+	
 	var amount=0,total=0;
-	amount= (P*r*Math.pow(1+r,t))/(Math.pow(1+r,t)-1);
-	amount=Math.ceil(amount);
+	if(r>0){
+		amount= (P*r*Math.pow(1+r,t))/(Math.pow(1+r,t)-1);
+	}
+	else if(r=0){
+		amount=0;
+	}
+	
 	total=amount*t;
+	amount=Math.ceil(amount);
+	total=Math.ceil(total);
+	var interest = total-P;
 	
 	document.getElementById('emiresult').hidden=false;
 	document.getElementById('emiresult').innerHTML="<table><tr><td>EMI</td><td>: Rs. "+ amount.toLocaleString('en-IN')
-	+"</td></tr><tr><td>Total Payment</td><td>: Rs. "+ total.toLocaleString('en-IN')+"</td></tr></table>";
+	+"</td></tr><tr><td>Interest Payable</td><td>: Rs. "+ interest.toLocaleString('en-IN')
+	+"</td></tr><tr><td>Total Payment<br/>(Principle+Interest)</td><td valign='top'>: Rs. "+ total.toLocaleString('en-IN')+"</td></tr></table>";
 	
 }
 
