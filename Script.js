@@ -6,14 +6,15 @@ function calculateFD(){
 	var r=document.getElementById('interestrate').value;
 	var tt=document.getElementById('tenureType').value;
 
-	
 	if(tt=='m')
 		var t=document.getElementById('tenure').value/12;
 	else
 		var t=document.getElementById('tenure').value;
 
+	console.log(t);
 	var n=document.getElementById('frequency').value;
-	var amount= P*Math.pow(1+((r/100)/n),n*t);
+	console.log(n);
+	var amount= P*Math.pow((1+((r/100)/n)),n*t);
 	amount=Math.round(amount);
 	var interest=amount-P;
 	document.getElementById('result').hidden=false;
@@ -123,6 +124,14 @@ function roundoff(money){
 	toINR(money);
 }
 
+
+
+function evalExpr(expr){
+	var res=eval(document.getElementById(expr).value);
+	document.getElementById('expResult').hidden=false;
+	document.getElementById('expResult').innerHTML="<br>"+document.getElementById(expr).value+"="+res+document.getElementById('expResult').innerHTML;
+}
+
 window.addEventListener('mousewheel', function(e){
     wDelta = e.wheelDelta;
     console.log(wDelta);
@@ -142,3 +151,5 @@ function toINR(money){
 function clearForm(id){
 	document.getElementById(id).hidden="hidden";
 }
+
+
