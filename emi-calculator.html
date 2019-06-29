@@ -3,9 +3,9 @@
 <head>
 <meta charset="ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RD Calculator</title>
-<link rel="stylesheet" href="Styles.css">
-<script type="text/javascript" src="Script.js"></script>
+<title>EMI Calculator</title>
+<link rel="stylesheet" href="styles.css">
+<script type="text/javascript" src="script.js"></script>
 
 <style>
 #interestrate{
@@ -34,10 +34,10 @@
 		<!-- Navigation Bar #Start-->
 		<div id="topnav" class="topnav">
 			<!-- <a href="Home.html">Home</a> -->
-			<a href="FDCalculator.html">FD Calculator</a>
-			<a class="active" href="RDCalculator.html">RD Calculator</a>
-			<a href="SIPCalculator.html">SIP Calculator</a>
-			<a href="EMICalculator.html">EMI Calculator</a>
+			<a href="fd-calculator.html">FD Calculator</a>
+			<a href="rd-calculator.html">RD Calculator</a>
+			<a href="sip-calculator.html">SIP Calculator</a>
+			<a class="active" href="emi-calculator.html">EMI Calculator</a>
 			<!-- <a href="Register.html" style="float: right;">Sign Up</a>
 		  <a href="Login.html" style="float: right;">Sign In</a> -->
 		</div>
@@ -48,20 +48,27 @@
 	<div id="main" class="graybackground">
 		<div id="left" class="layout"></div>
 		<div id="center" class="layout">
-			<form onsubmit="calculateRD(); return false;" method="post"
+			<form onsubmit="calculateEMI(); return false;" method="post"
 				autocomplete="off">
 
 				<table align="center">
 					<tr>
 						<td>
-							<p class="labels">Monthly Investment(Rs.)</p> <input type="text"
-							id="installment" name="installment" placeholder="Deposit Amount" onkeyup="toINR('installment')"
-							required pattern="[0-9,]+" />
+							<p class="labels">Loan Amount(Rs.)</p>
+							<input type="text" id="loanAmount" name="loanAmount" placeholder="Loan Amount" onkeyup="toINR('loanAmount')"
+							required pattern="[0-9,]+"/>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<p class="labels">Duration</p> <input type="text" id="durationY"
+							<p class="labels">Interest Rate(%)</p> <input type="text"
+							id="interestrate" name="interestrate" value=""
+							placeholder="Interest" required pattern="[0-9]*[. ]*[0-9]+" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p class="labels">Loan Tenure</p> <input type="text" id="durationY"
 							name="durationY" placeholder="Duration" required pattern="[0-9]+" />
 							<input id="durationYtext" type="text" disabled="disabled" placeholder="Year(s)" /> <select
 							id="durationM" name="durationM">
@@ -83,33 +90,14 @@
 					</tr>
 
 					<tr>
-						<td>
-							<p class="labels">Interest Rate(%)</p> <input type="text"
-							id="interestrate" name="interestrate" value=""
-							placeholder="Interest" required pattern="[0-9]*[. ]*[0-9]+" />
-						</td>
-					</tr>
-
-					<tr>
-						<td>
-							<p class="labels">Compounding Frequency</p> <select
-							id="frequency" name="frequency">
-								<option value="1">Yearly</option>
-								<option value="2">Half Yearly</option>
-								<option value="4">Quarterly</option>
-								<option value="12">Monthly</option>
-						</select>
-						</td>
-					</tr>
-					<tr>
 						<td><input type="submit" id="calculate" name="calculate"
 							value="Calculate" /> <input type="reset" id="clear" name="clear"
-							value="Clear" onclick="clearForm('rdresult');" /></td>
+							value="Clear" onclick="clearForm('emiresult');" /></td>
 					</tr>
 
 					<tr>
 						<td>
-							<p class="results" id="rdresult" hidden="hidden"></p>
+							<p class="results" id="emiresult" hidden="hidden"></p>
 						</td>
 					</tr>
 
