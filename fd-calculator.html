@@ -64,8 +64,8 @@
 			</select>
 		</td></tr>
 		<tr><td>
-			<input type="submit" id="calculate" 	name="calculate" value="Calculate"/>
-			<input type="reset"  id="clear" 		name="clear" 	 value="Clear"     onclick="clearForm('result');"/>
+			<input type="submit" id="calculate" class="submitMain"	name="calculate" value="Calculate"/>
+			<input type="reset"  id="clear" 	class="submitMain"	name="clear" 	 value="Clear"     onclick="clearForm('result');"/>
 		</td></tr>
 		<tr><td>
 			<p class="results" id="result" hidden="hidden"></p>
@@ -75,7 +75,7 @@
 		</div>
 		<div id="right" class="layout" align="center">
 		<div id="roughwork">
-		<p class="labels">Simple Calculations</p>
+		<p class="labels">Simple Calculator</p>
 			<form onsubmit="evalExpr('rough'); return false;" method="post">
 				<table>
 					<tr>
@@ -84,7 +84,7 @@
 						<td><input type="reset" id="evalExpR" name="evalExpR" value="Clear"/></td>
 					</tr>
 					<tr>
-					<td><p id="expResult" hidden="hidden" style="font-family: monospace; font-size: large;"></p></td>
+					<td><p id="expResult" hidden="hidden" class="roughResult"></p></td>
 					<td></td>
 						<td valign="top">
 							<input type="reset" id="evalExpRAll" name="evalExpRAll" value="ClearAll" onclick="clearForm('expResult');"/>

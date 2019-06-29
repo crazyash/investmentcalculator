@@ -1,5 +1,6 @@
 wDelta=0;
 kDelta='';
+var roughCount=0;
 /*FD Calculation*/
 function calculateFD(){
 	var P=document.getElementById('principleamount').value.replace(/,/g, "");
@@ -127,9 +128,12 @@ function roundoff(money){
 
 
 function evalExpr(expr){
+	roughCount++;
+	if(roughCount<=10){
 	var res=eval(document.getElementById(expr).value);
 	document.getElementById('expResult').hidden=false;
 	document.getElementById('expResult').innerHTML="<br>"+document.getElementById(expr).value+"="+res+document.getElementById('expResult').innerHTML;
+	}
 }
 
 window.addEventListener('mousewheel', function(e){
@@ -150,6 +154,8 @@ function toINR(money){
 
 function clearForm(id){
 	document.getElementById(id).hidden="hidden";
+	roughCount=0;
+	document.getElementById(id).innerHTML='';
 }
 
 

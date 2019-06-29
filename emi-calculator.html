@@ -90,8 +90,8 @@
 					</tr>
 
 					<tr>
-						<td><input type="submit" id="calculate" name="calculate"
-							value="Calculate" /> <input type="reset" id="clear" name="clear"
+						<td><input type="submit" id="calculate" class="submitMain"	name="calculate"
+							value="Calculate" /> <input type="reset" id="clear" class="submitMain"	name="clear"
 							value="Clear" onclick="clearForm('emiresult');" /></td>
 					</tr>
 
@@ -104,8 +104,28 @@
 				</table>
 			</form>
 		</div>
-		<div id="right" class="layout"></div>
-	</div>
-
-</body>
-</html>
+		<div id="right" class="layout" align="center">
+			<div id="roughwork">
+			<p class="labels">Simple Calculator</p>
+				<form onsubmit="evalExpr('rough'); return false;" method="post">
+					<table>
+						<tr>
+							<td><input type="text" id="rough" name="rough" placeholder="5000*250" style="width: 200px;" required pattern="[0-9]*[. ]*[0-9]+[+-/*][0-9]*[. ]*[0-9]+"/></td>
+							<td><input type="submit" id="evalExp" name="evalExp" value="Check"/></td>
+							<td><input type="reset" id="evalExpR" name="evalExpR" value="Clear"/></td>
+						</tr>
+						<tr>
+						<td><p id="expResult" hidden="hidden" class="roughResult"></p></td>
+						<td></td>
+							<td valign="top">
+								<input type="reset" id="evalExpRAll" name="evalExpRAll" value="ClearAll" onclick="clearForm('expResult');"/>
+							</td>
+						</tr>
+					</table>
+				</form>
+				</div>
+			</div>
+		</div>
+	
+	</body>
+	</html>
