@@ -178,3 +178,11 @@ function clearForm(id) {
 }
 
 
+function makeMeActive(evt) {
+	
+	tablinks = document.getElementsByClassName("active");
+	for (i = 0; i < tablinks.length; i++) {
+		tablinks[i].className = "";
+	}
+	evt.currentTarget.className = "active";
+}

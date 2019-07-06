@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="script.js"></script>
+
+</head>
+
+<body style="background-color:#f2f2f2;">
+    <div >
+        <div class="tab" style="width: 100%;">
+            <button class="tablinks" onclick="openContent(event, 'fixed_deposit')">1. What is Fixed Deposit?</button>
+
+        </div>
+
+        <div id="fixed_deposit" class="tabcontent">
+            <p>A fixed deposit (FD) is a financial instrument provided by banks or NBFCs which provides investors a
+                higher
+                rate of interest than a regular savings account, until the given maturity date. It may or may not
+                require
+                the creation of a separate account. It is known as a term deposit or time deposit in Canada, Australia,
+                New
+                Zealand, and the US, and as a bond in the United Kingdom and India.
+                <br /><br /> For a fixed deposit is that the
+                money
+                cannot be withdrawn from the FD as compared to a recurring deposit or a demand deposit before maturity.
+                Some
+                banks may offer additional services to FD holders such as loans against FD certificates at competitive
+                interest rates.
+                <br /><br /> It's important to note that banks may offer lesser interest rates under uncertain
+                economic
+                conditions. The interest rate varies between 4 and 7.50 percent. The tenure of an FD can vary from 7, 15
+                or 45 days to 1.5 years and can be as high as 10 years. These investments are safer than Post Office
+                Schemes as they are covered by the Deposit Insurance and Credit Guarantee Corporation (DICGC).
+                <br /> <br /> 
+                    Source:
+                    <a href=https://en.wikipedia.org/wiki/Fixed_deposit" target="_blank">wikipedia</a>
+            </p>
+        </div>
+
+        <div class="tab">
+            <button class="tablinks" onclick="openContent(event, 'recurring_deposit')">2. What is Recurring Deposit?</button>
+        </div>
+
+        <div id="recurring_deposit" class="tabcontent">
+            <p>A recurring deposit is a special kind of term deposit offered by banks in India which help people with
+                regular incomes to deposit a fixed amount every month into their recurring deposit account and earn
+                interest
+                at the rate applicable to fixed deposits. It is similar to making fixed deposits of a certain amount in
+                monthly installments. This deposit matures on a specific date in the future along with all the deposits
+                made
+                every month. Recurring deposit schemes allow customers an opportunity to build up their savings through
+                regular monthly deposits of a fixed sum over a fixed period of time. The minimum period of a recurring
+                deposit is six months and the maximum is ten years.
+                <br /><br />
+                The recurring deposit can be funded by standing instructions which are the instructions by the customer
+                to
+                the bank to withdraw a certain sum of money from his savings/current account and debit to the recurring
+                deposit account.
+                <br /><br />
+                When the recurring deposit account is opened, the maturity value is indicated to the customer assuming
+                that
+                the monthly installments will be paid regularly on due dates. If any installment is delayed, the
+                interest
+                payable in the account will be reduced and will not be sufficient to reach the maturity value.
+                Therefore,
+                the difference in interest will be deducted from the maturity value as a penalty. The rate of penalty
+                will
+                be fixed upfront. Interest is compounded on quarterly basis in recurring deposits.
+                <br /><br />
+                One can avail loans against the collateral of a recurring deposit up to 80 to 90% of the deposit value.
+
+                <br /><br />
+                Source:
+                    <a href="https://en.wikipedia.org/wiki/Recurring_deposit" target="_blank">wikipedia</a>
+            </p>
+        </div>
+
+        <div class="tab">
+
+            <button class="tablinks" onclick="openContent(event, 'sip')">3. What is SIP or Systematic Investment Plan?</button>
+
+        </div>
+        <div id="sip" class="tabcontent">
+
+            <p>A systematic investment plan (SIP) is an investment vehicle offered by mutual funds to investors,
+                allowing
+                them to invest small amounts periodically instead of lump sums. The frequency of investment is usually
+                weekly, monthly or quarterly.
+                <br /><br />
+                In SIPs, a fixed amount of money is debited by the investors in bank accounts periodically and invested
+                in a
+                specified mutual fund. The investor is allocated a number of units according to the current Net asset
+                value.
+                Every time a sum is invested, more units are added to the investors account.
+                <br /><br />
+                The strategy claims to free the investors from speculating in volatile markets by dollar cost averaging.
+                As
+                the investor is getting more units when the price is low and fewer units when the price is high, in the
+                long
+                run, the average cost per unit is supposed to be lower.
+                <br /><br />
+                SIP claims to encourage disciplined investment. SIPs are flexible; the investors may stop investing a
+                plan
+                anytime or may choose to increase or decrease the investment amount. SIP is usually recommended to
+                retail
+                investors who do not have the resources to pursue the active investment.
+                <br /><br />
+                Source:
+                    <a href="https://en.wikipedia.org/wiki/Systematic_Investment_Plan"
+                        target="_blank">wikipedia</a><
+            </p>
+        </div>
+
+
+        <script>
+            document.getElementById('fixed_deposit').style.display = "block";
+            document.getElementsByClassName('tablinks')[0].className += " active";
+            function openContent(evt, name) {
+                if (evt.currentTarget.className == "tablinks") {
+                    document.getElementById(name).style.display = "block";
+                    evt.currentTarget.className += " active";
+                }
+                else {
+                    document.getElementById(name).style.display = "none";
+                    evt.currentTarget.className = evt.currentTarget.className.replace(" active", "");
+                }
+            }
+        </script>
+    </div>
+</body>
+
+</html>
