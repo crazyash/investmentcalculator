@@ -11,7 +11,7 @@
 </head>
 
 <body style="background-color:#f2f2f2;">
-    <div >
+    <div>
         <div class="tab" style="width: 100%;">
             <button class="tablinks" onclick="openContent(event, 'fixed_deposit')">1. What is Fixed Deposit?</button>
 
@@ -36,14 +36,15 @@
                 conditions. The interest rate varies between 4 and 7.50 percent. The tenure of an FD can vary from 7, 15
                 or 45 days to 1.5 years and can be as high as 10 years. These investments are safer than Post Office
                 Schemes as they are covered by the Deposit Insurance and Credit Guarantee Corporation (DICGC).
-                <br /> <br /> 
-                    Source:
-                    <a href=https://en.wikipedia.org/wiki/Fixed_deposit" target="_blank">wikipedia</a>
+                <br /> <br />
+                Source:
+                <a href=https://en.wikipedia.org/wiki/Fixed_deposit" target="_blank">wikipedia</a>
             </p>
         </div>
 
         <div class="tab">
-            <button class="tablinks" onclick="openContent(event, 'recurring_deposit')">2. What is Recurring Deposit?</button>
+            <button class="tablinks" onclick="openContent(event, 'recurring_deposit')">2. What is Recurring
+                Deposit?</button>
         </div>
 
         <div id="recurring_deposit" class="tabcontent">
@@ -76,13 +77,14 @@
 
                 <br /><br />
                 Source:
-                    <a href="https://en.wikipedia.org/wiki/Recurring_deposit" target="_blank">wikipedia</a>
+                <a href="https://en.wikipedia.org/wiki/Recurring_deposit" target="_blank">wikipedia</a>
             </p>
         </div>
 
         <div class="tab">
 
-            <button class="tablinks" onclick="openContent(event, 'sip')">3. What is SIP or Systematic Investment Plan?</button>
+            <button class="tablinks" onclick="openContent(event, 'sip')">3. What is SIP or Systematic Investment
+                Plan?</button>
 
         </div>
         <div id="sip" class="tabcontent">
@@ -111,27 +113,22 @@
                 investors who do not have the resources to pursue the active investment.
                 <br /><br />
                 Source:
-                    <a href="https://en.wikipedia.org/wiki/Systematic_Investment_Plan"
-                        target="_blank">wikipedia</a><
-            </p>
+                <a href="https://en.wikipedia.org/wiki/Systematic_Investment_Plan" target="_blank">wikipedia</a>
+                < </p> </div> <script>
+                    document.getElementById('fixed_deposit').style.display = "block";
+                    document.getElementsByClassName('tablinks')[0].className += " active";
+                    function openContent(evt, name) {
+                        if (evt.currentTarget.className == "tablinks") {
+                            document.getElementById(name).style.display = "block";
+                            evt.currentTarget.className += " active";
+                        }
+                        else {
+                            document.getElementById(name).style.display = "none";
+                            evt.currentTarget.className = evt.currentTarget.className.replace(" active", "");
+                        }
+                    }
+                </script>
         </div>
-
-
-        <script>
-            document.getElementById('fixed_deposit').style.display = "block";
-            document.getElementsByClassName('tablinks')[0].className += " active";
-            function openContent(evt, name) {
-                if (evt.currentTarget.className == "tablinks") {
-                    document.getElementById(name).style.display = "block";
-                    evt.currentTarget.className += " active";
-                }
-                else {
-                    document.getElementById(name).style.display = "none";
-                    evt.currentTarget.className = evt.currentTarget.className.replace(" active", "");
-                }
-            }
-        </script>
-    </div>
 </body>
 
 </html>
