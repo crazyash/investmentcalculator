@@ -130,7 +130,6 @@ function changeAmount(money, val) {
 }
 
 function roundoff(money) {
-	alert('test');
 	var x = document.getElementById(money);
 	var amount = parseInt(x.value.replace(/,/g, ""));
 	var rem = amount % 500;
