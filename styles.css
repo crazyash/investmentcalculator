@@ -7,14 +7,13 @@ body {
 .topnav {
 	overflow: hidden;
 	background-color: #f2f2f2;
-	/* border-style: double;
-	border-width: 1px;
-	border-color: #45a049; */
-	/* border-radius: 5px; */
+	list-style-type: none;
+	margin: 0;
+  	padding: 0;
+
 }
 
 .topnav a {
-	float: left;
 	display: block;
 	color: #2c3e50;
 	text-align: center;
@@ -113,6 +112,18 @@ layout #right{
 @media only screen and (max-width: 1150px) {
 	#leftContentFrame, #rightContentFrame { display: none; }
 	#contentFrame { width: 100%;}
+	.topnav{
+		float: none;
+	}
+}
+
+@media only screen and (min-width: 1150px) {
+.topnav li:last-child{
+	 float: right;
+}
+.topnav li{
+		float: left;
+	}
 }
 
 .submitMain{
