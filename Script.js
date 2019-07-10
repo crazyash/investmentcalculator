@@ -53,7 +53,7 @@ function calculateRD() {
 function calculateSIP() {
 	var P = document.getElementById('installment').value.replace(/,/g, "");
 	var r = document.getElementById('interestrate').value;
-	var n = 1;
+	var n = 12;
 	var t = (document.getElementById('durationY').value * 12) + parseInt(document.getElementById('durationM').value);
 
 	var amount = 0;
@@ -130,6 +130,7 @@ function changeAmount(money, val) {
 }
 
 function roundoff(money) {
+	alert('test');
 	var x = document.getElementById(money);
 	var amount = parseInt(x.value.replace(/,/g, ""));
 	var rem = amount % 500;

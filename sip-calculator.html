@@ -39,9 +39,7 @@
 				<tr>
 					<td>
 						<p class="labels">Monthly Investment (Rs.)</p> <input type="text" id="installment"
-							name="installment" placeholder="Deposit Amount"
-							onmousewheel="changeAmount('installment',500);" onkeyup="changeAmount('installment',500);"
-							onchange="roundoff('installment');" required pattern="[0-9,]+" value="500" />
+							name="installment" placeholder="Deposit Amount. Multiples of 500" onchange="roundoff('installment');" onmousewheel="changeAmount('installment',500);" onkeyup="changeAmount('installment',500);" required pattern="[0-9,]+" />
 					</td>
 				</tr>
 				<tr>
