@@ -39,7 +39,7 @@ body {
 /* Navigation Bar #End*/
 
 /* Forms #Start*/
-.graybackground input[type=text], [type=email], [type=password] {
+.graybackground input[type=text] {
 	width: 320px;
 	padding: 8px 8px;
 	margin: 8px 0;
@@ -47,11 +47,6 @@ body {
 	border: 1px solid #ccc;
 	border-radius: 4px;
 	box-sizing: border-box;
-}
-
-
-.graybackground input[type=email], #username {
-	text-transform: lowercase;
 }
 
 .graybackground input[type=submit], [type=reset] {
@@ -98,34 +93,33 @@ body {
 	/* transition: background-color 1s; */
 }
 
-.layout{
-  float: left;
-  width: 33%;
-  height: 100%;
-  min-height: 450px;
-}
-
-layout #right{
-  width: 33%;
-  height: 100%;
-}
+@media only screen and (min-width: 1150px) {
+	.topnav li:last-child{
+		 float: right;
+	}
+	.topnav li{
+			float: left;
+		}		
+	}
+	
 
 @media only screen and (max-width: 1150px) {
 	#leftContentFrame, #rightContentFrame { display: none; }
-	#contentFrame { width: 100%;}
+	#contentFrame { width: 100%;
+	}
+	html{
+		scale: 1.5;
+	}
 	.topnav{
 		float: none;
 	}
 }
+/* @media only screen and (max-width: 780px) {
+	html{
+		transform: scale(1.5);
+		}
+} */
 
-@media only screen and (min-width: 1150px) {
-.topnav li:last-child{
-	 float: right;
-}
-.topnav li{
-		float: left;
-	}
-}
 
 .submitMain{
 font-size: 100%;
