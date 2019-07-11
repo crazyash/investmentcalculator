@@ -107,9 +107,6 @@ body {
 	#leftContentFrame, #rightContentFrame { display: none; }
 	#contentFrame { width: 100%;
 	}
-	html{
-		scale: 1.5;
-	}
 	.topnav{
 		float: none;
 	}

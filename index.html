@@ -7,6 +7,14 @@
 	<title>Investment Calculator</title>
 	<link rel="stylesheet" href="styles.css">
 	<script type="text/javascript" src="script.js"></script>
+	<script type="text/javascript">
+	
+	if(Number(screen.width) < 450){
+		 document.write("<style>body, #content{ zoom: 150%;}</style>");
+	}
+	
+	</script>
+	
 </head>
 
 <body>
@@ -31,7 +39,7 @@
 		</div>
 		<!-- Header #End-->
 
-		<div>
+		<div id="content">
 			<iframe src="" frameborder="0" id="leftContentFrame" name="leftContentFrame" width="30%"
 				style="min-height: 30rem;"></iframe>
 			<iframe src="fd-calculator.html" frameborder="0" id="contentFrame" name="contentFrame" width="40%"

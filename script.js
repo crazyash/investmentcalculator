@@ -1,6 +1,8 @@
 wDelta = 0;
 kDelta = '';
 var roughCount = 0;
+
+
 /*FD Calculation*/
 function calculateFD() {
 	var P = document.getElementById('principleamount').value.replace(/,/g, "");
